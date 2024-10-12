@@ -29,4 +29,29 @@
 //    public int  Not { get; set; }
 //}
 
-List<object> mixList = new() { "berkay" };
+List<Student> studentList = new List<Student> { new Student("asım", 46), new Student("Berkay", 90), new Student("Ömer", 88), new Student("Tahir", 55), new Student("Murat", 87) };
+
+var result = studentList.Select(x => new StudentDto { Name = x.Isim, Grade = x.Not });
+
+foreach (var student in result)
+{
+    Console.WriteLine(student);
+    Console.WriteLine(student.Name);
+    Console.WriteLine(student.Grade);
+}
+class Student
+{
+    public Student(string isim, int not)
+    {
+        Isim = isim;
+        Not = not;
+    }
+    public string Isim { get; set; }
+    public int Not { get; set; }
+}
+
+class StudentDto
+{
+    public string Name { get; set; }
+    public int Grade { get; set; }
+}
