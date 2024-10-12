@@ -29,4 +29,4 @@
 //    public int  Not { get; set; }
 //}
 
-List<object > mixList = new() { "berkay"}
+List<object> mixList = new() { "berkay" };
